@@ -1,0 +1,161 @@
+.gcp-popup {
+    padding: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .gcp-popup .title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .gcp-popup .image-container {
+    position: relative;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .gcp-popup .btn-group {
+    margin-top: 10px;
+  }
+  
+  .gcp-popup .spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  #map {
+    height: 100%; /* Fill the parent container */
+    width: 100%;  /* Maintain full width */
+  }
+  
+  .map-container {
+    display: flex;
+    flex-grow: 1; /* Allows the map container to grow and fill available space */
+    height: 100vh; /* Set height to full viewport height */
+  }
+  
+  .leaflet-map-providers {
+    position: relative;
+  }
+  
+  .provider-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 5px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .provider-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    width: 200px; /* Fixed width */
+    max-height: 300px; /* Max height with scroll */
+    overflow-y: auto; /* Enable scroll if too many items */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .provider-menu.hidden {
+    display: none;
+  }
+  
+  .provider-item {
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .provider-item input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .provider-item label {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  /* Custom input fields for the custom URL */
+  .custom-options.hidden {
+    display: none;
+  }
+  
+  /* Close button for map provider menu */
+  .close-provider-menu {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  /* Remove extra space between the map provider icon and the options */
+  .provider-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .provider-item input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .provider-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+  }
+  
+  /* Adjusting the padding and margin of the menu for better display */
+  .provider-menu {
+    padding: 10px;
+    margin-top: 10px; /* Space from the provider icon */
+  }
+  
+  /* Styling for the Custom URL input and Apply button */
+  .custom-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between the input and button */
+  }
+  
+  .custom-options input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .custom-options button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-options button:hover {
+    background-color: #45a049;
+  }
+  
