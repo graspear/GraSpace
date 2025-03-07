@@ -1,0 +1,19 @@
+{% extends 'registration/login.html' %}
+{% load i18n %}
+
+{% block registration_content %}
+    <style>
+        .login-link {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .login-link:hover {
+            color: rgb(137, 137, 255);
+            text-decoration: underline;
+        }
+    </style>
+    <h3>{% trans "You have been logged out." %}</h3>
+    <p><a href="{% url 'login' %}" class="login-link">{% trans 'Log In Again' %}</a></p>
+{% endblock %}
