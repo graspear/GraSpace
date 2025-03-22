@@ -5018,7 +5018,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
 .nav>li.disabled>a:focus {
     color: #b4bcc2;
     text-decoration: none;
-    background-color: transparent;
+    background-color: #ff0;
     cursor: not-allowed
 }
 

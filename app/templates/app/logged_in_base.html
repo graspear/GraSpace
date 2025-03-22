@@ -3,7 +3,6 @@
 
 {% block navbar-top-links %}
 {% is_single_user_mode as single_user %}
-
 {% if not single_user %}
 <ul class="nav navbar-top-links navbar-right">
     <li class="dropdown">
@@ -53,7 +52,7 @@
 {% block navbar-sidebar %}
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse collapse">
-        <ul class="nav" id="side-menu">
+        <ul class="nav" id="side-menu" style="background-color: lightblue; color: white;">
             <li>
                 <a href="/dashboard/"><i class="fa fa-tachometer-alt fa-fw"></i> {% trans 'Dashboard' %}</a>
             </li>
@@ -64,6 +63,7 @@
 
             {% get_plugins_main_menus as plugin_menus %}
             {% for menu in plugin_menus %}
+            <!-- {{ menu.label }}<br> {# This prints all menu labels #} -->
             {% if menu.label == "GCP Interface" %}
             <li>
                 <a href="{{menu.link}}">
@@ -86,9 +86,56 @@
             </li>
             {% endif %}
             {% endfor %}
+            {% get_plugins_main_menus as plugin_menus %}
+            {% for menu in plugin_menus %}
+            <!-- {{ menu.label }}<br> {# This prints all menu labels #} -->
+            {% if menu.label == "Lightning" %}
+            <li>
+                <a href="{{menu.link}}">
+                    <i class="{{menu.css_icon}}"></i> {{menu.label}}
+                    {% if menu.has_submenu %}<span class="fa arrow"></span>{% endif %}
+                </a>
 
+                {% if menu.has_submenu %}
+                <ul class="nav nav-second-level">
+                    {% for submenu in menu.submenu %}
+                    <li>
+                        <a href="{{submenu.link}}">
+                            <i class="{{submenu.css_icon}}"></i> {{submenu.label}}
+                            {% if submenu.has_submenu %}<span class="fa arrow"></span>{% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+            {% endif %}
+            {% endfor %}
+            {% get_plugins_main_menus as plugin_menus %}
+            {% for menu in plugin_menus %}
+            <!-- {{ menu.label }}<br> {# This prints all menu labels #} -->
+            {% if menu.label == "Diagnostic" %}
+            <li>
+                <a href="{{menu.link}}">
+                    <i class="{{menu.css_icon}}"></i> {{menu.label}}
+                    {% if menu.has_submenu %}<span class="fa arrow"></span>{% endif %}
+                </a>
 
-
+                {% if menu.has_submenu %}
+                <ul class="nav nav-second-level">
+                    {% for submenu in menu.submenu %}
+                    <li>
+                        <a href="{{submenu.link}}">
+                            <i class="{{submenu.css_icon}}"></i> {{submenu.label}}
+                            {% if submenu.has_submenu %}<span class="fa arrow"></span>{% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+            {% endif %}
+            {% endfor %}
             {% if view_nodes %}
             <li>
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> {% trans 'Processing Nodes' %}<span
