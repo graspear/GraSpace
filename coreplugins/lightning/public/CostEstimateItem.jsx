@@ -4,7 +4,7 @@ import ResizeModes from 'webodm/classes/ResizeModes';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 import { _ } from 'webodm/classes/gettext';
-
+// Used to see the credits dynamically
 export default class CostEstimateItem extends React.Component {
     static defaultProps = {};
 
@@ -25,7 +25,7 @@ export default class CostEstimateItem extends React.Component {
         this.imageWidth = null;
         this.imageHeight = null;
     }
-
+// dynamically update the credits
     componentDidUpdate(prevProps) {
         if (
             prevProps.taskInfo.selectedNode &&
@@ -51,7 +51,7 @@ export default class CostEstimateItem extends React.Component {
             }
         }
     }
-
+// extract image dimensions
     extractImageDimensions = (file, cb) => {
         const reader = new FileReader();
         reader.onload = (entry => {
@@ -63,7 +63,7 @@ export default class CostEstimateItem extends React.Component {
         });
         reader.readAsDataURL(file);
     };
-
+// Estimate the credits
     estimateCredits = () => {
         this.setState({ loading: true });
 

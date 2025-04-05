@@ -4,7 +4,7 @@ import ErrorMessage from 'webodm/components/ErrorMessage';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 import { _ } from 'webodm/classes/gettext';
-
+//handle login of processing node
 export default class Login extends React.Component {
   static defaultProps = {
   };
@@ -30,7 +30,7 @@ export default class Login extends React.Component {
   handlePasswordChange = (e) => {
       this.setState({password: e.target.value});
   }
-
+//handle login
   handleLogin = () => {
       this.setState({loggingIn: true});
 

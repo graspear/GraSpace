@@ -5,7 +5,7 @@ import './Dashboard.scss';
 import $ from 'jquery';
 import { _ } from 'webodm/classes/gettext';
 import Trans from 'webodm/components/Trans';
-
+//API calling
 export default class Dashboard extends React.Component {
   static defaultProps = {
   };
